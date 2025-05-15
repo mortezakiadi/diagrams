@@ -1,13 +1,13 @@
 
-[Uploading #  Practical AI 
+#An AI Course Plan
 
-### Prerequisites
+## Prerequisites
 
 - Basic Python programming knowledge
 
 - Basic understanding of machine learning concepts
 
-### Tools and Technologies
+## Tools and Technologies
 
 - Python 3.x programming 
 
@@ -21,7 +21,7 @@
 
 - Pytorch library 
 
-## Course Tenets 
+# Course Tenets 
 
 - Emphasis on practical, hands-on learning
 
@@ -56,8 +56,8 @@
 
     - something like this:
 
-![](media/image1.png){width="5.853210848643919in"
-height="1.9357797462817148in"}
+![image](https://github.com/user-attachments/assets/f1f4ddd7-5abf-4590-bc69-de0ad542ea15)
+
 
 - Different ways to model language (based on the above historical
   picture there are different LMs like Statistical methods, Neural
@@ -68,8 +68,8 @@ height="1.9357797462817148in"}
 - Examples of the number of Transformer based models created after
   2019-2024:(https://arxiv.org/pdf/2303.18223) 
 
-![](media/image2.png){width="5.853210848643919in"
-height="3.3486231408573928in"}
+![image](https://github.com/user-attachments/assets/2f427bdc-dacd-42e0-891e-acfd29943d97)
+
 
 - Discriminative vs Generating models
 
@@ -84,8 +84,8 @@ height="3.3486231408573928in"}
     - Context: The sequence of previous words that influence the next
       word.
 
-![](media/image3.png){width="5.853210848643919in"
-height="2.357797462817148in"}
+![image](https://github.com/user-attachments/assets/dfa87652-5800-4a97-8292-c0fed65afdec)
+
 
 - Probability Distribution: A mathematical function showing the
   likelihood of each possible outcome, given existing sequence.
@@ -96,8 +96,8 @@ height="2.357797462817148in"}
 
   - Language entries and NLP Tasks
 
-![](media/image4.png){width="5.853210848643919in"
-height="2.724770341207349in"}
+![image](https://github.com/user-attachments/assets/01aadbeb-9005-4c8d-9d64-cde121bd1899)
+
 
 - In above picture we should establish the idea of:
 
@@ -114,9 +114,9 @@ height="2.724770341207349in"}
 - [Basic text processing]{.mark} and representation techniques 
 
   - Data processing for LLMs
+  - 
+![image](https://github.com/user-attachments/assets/312c6839-2051-4878-a07a-b3b00170b525)
 
-![](media/image5.png){width="5.853210848643919in"
-height="1.9449540682414699in"}
 
 - Pre-processing text 
 
@@ -127,8 +127,8 @@ height="1.9449540682414699in"}
 - Tokenization: → In this section we would like to cover the topics in
   this figure:
 
-![](media/image6.png){width="5.853210848643919in"
-height="3.8899081364829398in"}
+![image](https://github.com/user-attachments/assets/cc2d4a95-c133-4f2f-9bcb-f60fee82702e)
+
 
 - [Different tokenization levels]{.mark} (word, subword, character and
   byte levels)
@@ -178,8 +178,8 @@ height="3.8899081364829398in"}
   - **Pipeline library:** Streamlined workflow combining model,
     tokenizer, and dataset.
 
-![](media/image7.png){width="5.853210848643919in"
-height="1.2935772090988626in"}
+![image](https://github.com/user-attachments/assets/b0858d9e-497a-4dbe-867c-221178cde2a5)
+
 
 **[Lab (2 hours)]{.mark}**
 
