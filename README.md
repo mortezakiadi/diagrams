@@ -1,5 +1,5 @@
 
-#An AI Course Plan
+# An AI Course Plan
 
 ## Prerequisites
 
