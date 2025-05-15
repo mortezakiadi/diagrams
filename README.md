@@ -232,8 +232,8 @@ the fundamentals.
 
 **Token Embeddings (1 hour)**
 
-![](media/image8.png){width="5.853210848643919in"
-height="5.238531277340332in"}
+![image](https://github.com/user-attachments/assets/fb1fdbfb-e592-426c-8b33-85aa6d31346b)
+
 
 - Why do we need to tokenize
 
@@ -336,8 +336,8 @@ one-hot encoding while introducing the idea of token-level embeddings.
     sentence vectors) → Later it was proved that all we needed was just
     that attention part (attention is all you need paper)
 
-![](media/image9.png){width="5.853210848643919in"
-height="4.3211001749781275in"}
+![image](https://github.com/user-attachments/assets/238474f6-bf56-4b01-adbc-8b2b46291998)
+
 
 - RNN Fundamentals  
 
@@ -363,8 +363,8 @@ height="4.3211001749781275in"}
       states and how they lend to different seq2seq NLP
       tasks): <https://karpathy.github.io/2015/05/21/rnn-effectiveness/>
 
-![](media/image10.png){width="5.853210848643919in"
-height="1.8990824584426946in"}
+![image](https://github.com/user-attachments/assets/10cbfeda-5cfd-48a7-b998-de58d15c2b5b)
+
 
 -  One-to-One  (classification)
 
@@ -392,11 +392,11 @@ height="1.8990824584426946in"}
 
     - Human attention analogy  
 
-![](media/image11.png){width="5.853210848643919in"
-height="2.0275218722659667in"}
+![image](https://github.com/user-attachments/assets/5c5c23c2-14c9-4ab3-8c1e-38bbd2ab5e0c)
 
-![](media/image12.png){width="5.853210848643919in"
-height="1.6146784776902887in"}
+
+![image](https://github.com/user-attachments/assets/8437346b-9523-4ba7-ac02-dee818ea290e)
+
 
 - Review: Why RNN with contextual embedding was not enough
 
@@ -421,8 +421,7 @@ height="1.6146784776902887in"}
 
   - High-Level Introduction to Transformers  
 
-![](media/image13.png){width="5.853210848643919in"
-height="3.623852799650044in"}
+![image](https://github.com/user-attachments/assets/49a693ef-9e24-4feb-8199-eda986c3bfe5)
 
 - Encoder-decoder architecture at scale  
 
@@ -441,20 +440,21 @@ height="3.623852799650044in"}
 
 - Transformer Block, A Stack of Technologies  (45 mins) 
 
-![](media/image14.png){width="5.853210848643919in"
-height="3.458715004374453in"}
+![image](https://github.com/user-attachments/assets/2a9983ab-a86d-4b4c-9546-cbd84289ecec)
+
 
 - Inside Embedding block:
 
   - Tokenizer, embedding the tokens and positional embedding (Review)
 
-![](media/image15.png){width="5.844036526684165in"
-height="3.4495406824146984in"}
+![image](https://github.com/user-attachments/assets/6500c3da-7c28-465a-a72c-f65c795055d8)
 
-- Inside Transformer block:
 
-![](media/image16.png){width="5.853210848643919in"
-height="2.6055041557305336in"}
+- Inside the Transformer block:
+
+![image](https://github.com/user-attachments/assets/f9b41e3a-df56-4056-b1c8-0aef8d3bd0ac)
+
+
 
 - Self-attention
 
@@ -462,15 +462,15 @@ height="2.6055041557305336in"}
 
 <!-- -->
 
-- Inside Self-attention layer at a glance
+- Inside the Self-attention layer at a glance
 
   - A simplified view of attention: current position token embedding is
     processed in relation to other token embeddings in the same
     sequence, to get an enriched view of the token (contextual embedding
     of that token)
 
-![](media/image17.png){width="5.853210848643919in"
-height="2.8440365266841643in"}
+![image](https://github.com/user-attachments/assets/d20a3e33-c09f-4b29-8446-4152beb2cd51)
+
 
 - Step 1: calculate how much each word in that sentence is relevant to
   other words in the same sentence (self). The result is called
@@ -482,49 +482,49 @@ height="2.8440365266841643in"}
 - Step 3: Average sum to get the attention value of that word/token) in
   that sentence 
 
-![](media/image18.png){width="3.9318143044619425in"
-height="4.87471019247594in"}
+![image](https://github.com/user-attachments/assets/452e538f-91da-448a-9e39-66e649ce5b94)
+
 
 - Visualizing QKV projection
 
-![](media/image19.png){width="5.853210848643919in"
-height="3.7706419510061244in"}
+![image](https://github.com/user-attachments/assets/123e8ddf-0a09-4573-89ad-c104764f3d2c)
+
 
 - Attention Head 
 
   - Each self attention is deemed as one head
 
-![](media/image20.png){width="5.853210848643919in"
-height="4.688073053368329in"}
+![image](https://github.com/user-attachments/assets/ee79a004-fe41-4c45-8c91-97a4e07bb1e5)
+
 
 - Multi Head Attention (MHA)
 
   - Transformers are able to look into each token from different
-    perspstives and each needs its own head. They have multiple heads.
+    perspectives and each needs its own head. They have multiple heads.
 
-![](media/image21.png){width="5.356278433945757in"
-height="4.869343832020998in"}
+![image](https://github.com/user-attachments/assets/0c9648df-927a-451e-a146-2aaae3b2af7e)
+
 
 - Inside FFNN Block
 
-  - The output of self attention layer undergoes non-linear
-    transformations, which gives the model additional degree of freedom
+  - The output of self self-attention layer undergoes non-linear
+    transformations, which give the model an additional degree of freedom
     to find complex patterns 
 
   - Bringing the attention weights to the next level
 
-  - Expanding the dimension to original token embedding dimension 
+  - Expanding the dimension to the original token embedding dimension 
 
-![](media/image22.png){width="5.853210848643919in"
-height="4.79816491688539in"}
+![image](https://github.com/user-attachments/assets/4d5d2550-ec1b-4cae-bb27-612fc5720162)
+
 
 - Residual connections 
 
-  - What problem they solve 
+  - What problem do they solve 
 
 - Decoder 
 
-  - Difference with Encoder : Casual Attention 
+  - Difference with Encoder: Casual Attention 
 
 - Encoder-decoder architecture overview
 
@@ -578,8 +578,8 @@ a.  \...\...
 
 - LLM Lifecycle
 
-![](media/image23.png){width="5.853210848643919in"
-height="1.715596019247594in"}
+![image](https://github.com/user-attachments/assets/16349778-eb82-4b5f-be26-efe5ade1d307)
+
 
 - **Pre-training **
 
@@ -587,8 +587,8 @@ height="1.715596019247594in"}
 
   - Default Training objectives
 
-![](media/image24.png){width="5.853210848643919in"
-height="3.5963298337707785in"}
+![image](https://github.com/user-attachments/assets/31631875-9e85-42da-b294-9db116c339b1)
+
 
 - MLM (→ BERT)
 
@@ -596,21 +596,21 @@ height="3.5963298337707785in"}
 
 - Causal Language Modeling (CLM)  (→ GPT)
 
-- What if none of the above objectives fits the current use case?
+- What if none of the above objectives fit the current use case?
 
-  - Partial Fine tuning (Transfer Learning)
+  - Partial Fine-tuning (Transfer Learning)
 
-  - Full Fine tuning
+  - Full fine-tuning
 
-  - Building model from scratch 
+  - Building ma odel from scratch 
 
 <!-- -->
 
 - **Post Training:** Instruction Fine Tuning 
 
-  - High quality data: pairs of (Prompt, Response)
+  - High-quality data: pairs of (Prompt, Response)
 
-  - Fine tuning entire model
+  - Fine-tuning the entire model
 
   - Transfer Learning (Partial training)
 
@@ -626,8 +626,8 @@ height="3.5963298337707785in"}
 
 - Transformer Architecture variations
 
-![](media/image25.png){width="5.853210848643919in"
-height="3.5321095800524933in"}
+![image](https://github.com/user-attachments/assets/201fe4c8-ad9a-4853-ad93-08e6dcbccea5)
+
 
 - Encoder variations (Autoencoding LMs)
 
@@ -667,8 +667,8 @@ height="3.5321095800524933in"}
 
   - Chinchilla
 
-![](media/image26.png){width="5.853210848643919in"
-height="3.2752285651793525in"}
+![image](https://github.com/user-attachments/assets/7daa2861-1e86-4396-8496-cae2b9d6afdd)
+
 
 - Bigger models \# Better Performance 
 
@@ -699,16 +699,16 @@ height="3.2752285651793525in"}
 
     - Workflow 
 
-![](media/image27.png){width="5.853210848643919in"
-height="2.733944663167104in"}
+![image](https://github.com/user-attachments/assets/a1fd58e7-14fc-4143-834f-0337f3524f2f)
 
-![](media/image28.png){width="5.853210848643919in"
-height="1.990825678040245in"}
+
+![image](https://github.com/user-attachments/assets/43b6cac0-1dd7-4499-858e-079759ad5a06)
+
 
 -  Hosting Model API
 
-![](media/image29.png){width="5.853210848643919in"
-height="3.394494750656168in"}
+![image](https://github.com/user-attachments/assets/0b03ebbc-c2a5-47da-9d5a-8136c7d02466)
+
 
 - Why hosting Model API 
 
@@ -716,8 +716,8 @@ height="3.394494750656168in"}
 
 - Taxonomy of Evaluation metrics
 
-![](media/image30.png){width="5.853210848643919in"
-height="2.8165135608048995in"}
+![image](https://github.com/user-attachments/assets/3736f303-39b9-45a1-a869-712b11b5cf25)
+
 
 -  Understanding Public Benchmarks
 
@@ -727,7 +727,8 @@ height="2.8165135608048995in"}
 
 - Introduction to HuggingFace Leaderboard 
 
-![](media/image31.png){width="2.725in" height="1.8in"}
+![image](https://github.com/user-attachments/assets/69ee1866-8c31-48d6-b9ef-badafd8ed6d9)
+
 
 -  Designing an Evaluation Pipeline
 
@@ -741,8 +742,8 @@ height="2.8165135608048995in"}
 
 ## Week 6:  Text Classification with Fined-Tuned Encoder Models
 
-![](media/image32.png){width="5.853210848643919in"
-height="5.348623140857393in"}
+![image](https://github.com/user-attachments/assets/472f3f87-1c7a-4d5a-814f-d3c9cf54f30d)
+
 
 **Fine-Tuned Encoder Models (Task Specific Models) (\... hour)**
 
@@ -757,15 +758,15 @@ height="5.348623140857393in"}
 
   - Massive Text Embedding Benchmark (MTEB)
 
-![](media/image33.png){width="5.853210848643919in"
-height="2.990825678040245in"}
+![image](https://github.com/user-attachments/assets/fef01b17-daf7-4c1e-9f35-3d299bfa42d7)
+
 
 - <https://artificialanalysis.ai/>
 
 - BERT variations and comparing performance benchmarks
 
-![](media/image34.png){width="5.853210848643919in"
-height="1.7431189851268591in"}
+![image](https://github.com/user-attachments/assets/d1640836-0957-4bf7-83eb-847a5a293b91)
+
 
 **Lab (\... hours)**
 
@@ -775,8 +776,8 @@ height="1.7431189851268591in"}
 
 ## Week 7:  Expanding Pre-trained Embedding Model 
 
-![](media/image35.png){width="5.853210848643919in"
-height="3.376146106736658in"}
+![image](https://github.com/user-attachments/assets/b4c58d8c-7639-48da-9b21-480cb8469fc8)
+
 
 **Lecture (2 hours)**
 
@@ -789,8 +790,8 @@ height="3.376146106736658in"}
 
   - Training a Classifier with embedded sentences 
 
-![](media/image36.png){width="5.853210848643919in"
-height="2.7981649168853893in"}
+![image](https://github.com/user-attachments/assets/947b499c-d1d8-4ebb-9a09-d3dcb808928c)
+
 
 - Sentiment Analysis using Embedding Model with unlabeled data
 
@@ -816,8 +817,8 @@ height="2.7981649168853893in"}
 
 - IR in RAG
 
-![](media/image37.png){width="3.2110597112860892in"
-height="1.7014774715660543in"}
+![image](https://github.com/user-attachments/assets/ec9ed720-9ab4-4905-aa6b-d40f0ccf5148)
+
 
 - Comparing lexical search vs. Semantic Search (Keyword matching  vs.
   Dense Retrieval) 
@@ -832,8 +833,8 @@ height="1.7014774715660543in"}
 
 - Building an Semantic Search pipeline through Embedding models
 
-![](media/image38.png){width="5.853210848643919in"
-height="2.137613735783027in"}
+![image](https://github.com/user-attachments/assets/d93374d5-a521-4a23-954d-3eefea77400d)
+
 
 - Text pre-processing 
 
@@ -853,8 +854,8 @@ height="2.137613735783027in"}
 
   - Fine tuning chunk embeddings 
 
-![](media/image39.png){width="5.853210848643919in"
-height="2.697247375328084in"}
+![image](https://github.com/user-attachments/assets/d7948e48-b4c1-42ee-ae5f-cdb6527c39ff)
+
 
 **Lab (2 hours)**
 
@@ -870,8 +871,8 @@ height="2.697247375328084in"}
 
 ## Week 9: Re-ranking in RAG systems
 
-![](media/image40.png){width="5.853210848643919in"
-height="2.577981189851269in"}
+![image](https://github.com/user-attachments/assets/c343be4f-9c42-4047-af5f-50b1d4c47929)
+
 
 **Lecture (2 hours)**
 
@@ -917,8 +918,8 @@ height="2.577981189851269in"}
 
     - How to minimize the effect of "Catastrophic Forgetting"
 
-![](media/image41.png){width="5.853210848643919in"
-height="2.724770341207349in"}
+![image](https://github.com/user-attachments/assets/45c052fe-4df7-470c-8700-34e5e8aa3510)
+
 
 - Loading model 
 
@@ -940,8 +941,8 @@ height="2.724770341207349in"}
 
 <https://aws.amazon.com/blogs/machine-learning/analyze-customer-reviews-using-amazon-bedrock/>
 
-![](media/image42.png){width="5.853210848643919in"
-height="3.100916447944007in"}
+![image](https://github.com/user-attachments/assets/127f3b10-e464-4aed-bde9-c7c6b5693ad5)
+
 
 - Lab:
 
@@ -957,7 +958,7 @@ height="3.100916447944007in"}
 
 - Controlling the outputs of Generative Models
 
-  - Token Generation methods
+  - Token Generation Methods
 
     - Deterministic methods
 
@@ -989,14 +990,14 @@ height="3.100916447944007in"}
 
   - Prompt Chaining
 
-    - Complex multi step task 
+    - Complex multi-step task 
 
-![](media/image43.png){width="3.885439632545932in"
-height="5.164347112860892in"}
+![image](https://github.com/user-attachments/assets/7d674875-bd26-4395-b5ad-ed4f4334ad20)
+
 
 - Reasoning by CoT
 
-  - Reasoning: Self Reflection
+  - Reasoning: Self-Reflection
 
   - Variations
 
@@ -1006,10 +1007,11 @@ height="5.164347112860892in"}
 
 - Self Consistency and CoT
 
-  - Using Same prompt with different LLMs
+  - Using the Same prompt with different LLMs
 
-![](media/image44.png){width="3.824779090113736in"
-height="5.161653543307087in"}
+![image](https://github.com/user-attachments/assets/6efbd627-03cf-4299-827f-18ad22aa80b4)
+
+
 
 - Controlling outputs
 
@@ -1021,8 +1023,8 @@ height="5.161653543307087in"}
 
 - Fine Tuning Generating models
 
-![](media/image45.png){width="5.853210848643919in"
-height="1.9541283902012248in"}
+![image](https://github.com/user-attachments/assets/bcdb374e-64d8-4ed2-a08c-0a687324cef8)
+
 
 - 
 
