@@ -1,3 +1,1066 @@
+
+[Uploading #  Practical AI 
+
+### Prerequisites
+
+- Basic Python programming knowledge
+
+- Basic understanding of machine learning concepts
+
+### Tools and Technologies
+
+- Python 3.x programming 
+
+- NLTK/spaCy
+
+- Jupyter Notebook
+
+- Basic LLM APIs
+
+- HuggingFace library
+
+- Pytorch library 
+
+## Course Tenets 
+
+- Emphasis on practical, hands-on learning
+
+- Focus on understanding fundamentals
+
+- Regular practice exercises
+
+- Real-world applications
+
+- **Using lots of visualization** if implementing code is hard or
+  infeasible 
+
+## Weekly Curriculum
+
+## Week 1: Foundations of Language Model
+
+**Lecture (2 hours)**
+
+- Introduction to Language Model
+
+  - Relationship between AI, ML, DL, NLP, LLMs and FMs (Review)
+
+  - NLP in daily interactions (Search Engines, Conversational AI devices
+    like Alexa, Siri,.., Spam Filtering, Translation, PoS, Sentiment
+    Analysis)
+
+  - What is a model and what a language model is 
+
+  - History of Language Models (Here in timeline we want to show where
+    BoW, word2vec and attention come to the LM world. Then we show BERT,
+    GPT and so on until now)
+
+    - something like this:
+
+![](media/image1.png){width="5.853210848643919in"
+height="1.9357797462817148in"}
+
+- Different ways to model language (based on the above historical
+  picture there are different LMs like Statistical methods, Neural
+  Networks, pre-trained and LLMs)
+
+<!-- -->
+
+- Examples of the number of Transformer based models created after
+  2019-2024:(https://arxiv.org/pdf/2303.18223) 
+
+![](media/image2.png){width="5.853210848643919in"
+height="3.3486231408573928in"}
+
+- Discriminative vs Generating models
+
+- Language model building blocks:
+
+  - Before diving into the technical details, let\'s get familiar with
+    some core concepts in language modeling:
+
+    - [Vocabulary:]{.mark} The set of all possible words that can appear
+      in a language model.
+
+    - Context: The sequence of previous words that influence the next
+      word.
+
+![](media/image3.png){width="5.853210848643919in"
+height="2.357797462817148in"}
+
+- Probability Distribution: A mathematical function showing the
+  likelihood of each possible outcome, given existing sequence.
+
+<!-- -->
+
+- Representing Language 
+
+  - Language entries and NLP Tasks
+
+![](media/image4.png){width="5.853210848643919in"
+height="2.724770341207349in"}
+
+- In above picture we should establish the idea of:
+
+  - How to show a word in computer  → Tokenizaing 
+
+  - How to show its meaning in context  \-\--\> Embedding 
+
+<!-- -->
+
+- 
+
+<!-- -->
+
+- [Basic text processing]{.mark} and representation techniques 
+
+  - Data processing for LLMs
+
+![](media/image5.png){width="5.853210848643919in"
+height="1.9449540682414699in"}
+
+- Pre-processing text 
+
+- From words to numbers
+
+- Tokenization → Embedding 
+
+- Tokenization: → In this section we would like to cover the topics in
+  this figure:
+
+![](media/image6.png){width="5.853210848643919in"
+height="3.8899081364829398in"}
+
+- [Different tokenization levels]{.mark} (word, subword, character and
+  byte levels)
+
+- Special tokens (Padding, UNK, \...) and why they are needed
+
+- Relation between tokens and vocabulary (how to build vocab out of
+  unique tokens in a text)
+
+- Impact of tokenizers on model performance 
+
+<!-- -->
+
+- Tokenizer in action
+
+  - Encoding: converting text to token
+
+  - Decoding: converting token to text
+
+- Tokenizer types
+
+  - [Rule bases]{.mark} (like those that operate on whitespaces between
+    words or those that are character based)
+
+  - Leaned tokenizers (BPE for GPT, WordPiece for BERT and Unigram for
+    T5) 
+
+<!-- -->
+
+- Using SageMaker JumpStart and HuggingFace
+
+  - Why Model Hub 
+
+  - What is Amazon SageMaker JumpStart
+
+  - What is HuggingFace
+
+  - How to use HuggingFace (pipeline, model and data)
+
+  - Using SageMaker JumpStart and HuggingFace 
+
+  - **Model:** Pre-trained models like BERT or RoBERTa.
+
+  - **Dataset:** Loading and preprocessing data with HuggingFace\'s
+    Transformer library.
+
+  - **Pipeline library:** Streamlined workflow combining model,
+    tokenizer, and dataset.
+
+![](media/image7.png){width="5.853210848643919in"
+height="1.2935772090988626in"}
+
+**[Lab (2 hours)]{.mark}**
+
+**Environment Setup and Visualization Tools**: Prepares students to use
+the \"Tools and Technologies\" listed on page 1, including Python
+programming and NLTK
+
+**Basic Text Preprocessing**: This part of the lab covers the
+fundamental concept of \"Pre-processing text\". Introduces tokenization,
+which is a core concept highlighted in this week.
+
+**Understanding Vocabulary and Frequency Distributions**: This relates
+to the \"Vocabulary" concept. Helps visualize word frequencies,
+providing insight into the \"Probability Distribution\" concept
+
+**Simple Rule-based Text Representation**: Corresponds to \"Bag of Words
+(BoW)\" which is a basic document-level embedding approach. This is a
+rule_based approach, and the order is not important here. The key
+insight is that BOW discards grammar and word order, focusing only on
+whether words occur in the document and how frequently. Creates a basic
+matrix representation of text that serves as the foundation for later
+weeks
+
+**Tokenization Comparison**: Addresses different tokenization levels
+(word, subword, character and byte levels). Exploring \"Tokenizer
+types\", specifically the \"Rule bases (like those that operate on
+whitespaces between words or those that are character based) .
+
+[NOTE to Lab developers:]{.mark} I deliberately avoided topics that
+appeared in later weeks, such as:
+
+- Embeddings (covered in Week 2)
+
+- Contextual embeddings (Week 3)
+
+- Transformers (Week 4)
+
+- Pre-trained models (Week 5)
+
+- Fine-tuning (Weeks 5-11)
+
+- Model architectures (later weeks)
+
+The lab focuses purely on Week 1\'s foundational concepts about how
+language is processed at a basic level. This prepares students for the
+more complex topics to come while ensuring they have a solid grasp of
+the fundamentals.
+
+## Week 2: From  Tokens to Token Embeddings 
+
+**Token Embeddings (1 hour)**
+
+![](media/image8.png){width="5.853210848643919in"
+height="5.238531277340332in"}
+
+- Why do we need to tokenize
+
+- From Token (one number)→ to Embedding (many numbers=vector) (review)
+
+- Why we need embeddings (dimensionality reduction, semantic meaning)
+
+- Token-Level Embeddings ( 0.5 hour) 
+
+  - One-Hot Encoding  
+
+    - Basic concept and limitations  
+
+    - Why we need better representations  
+
+  - Advanced Token Embeddings  
+
+    - Word2Vec (CBOW and skip-gram architectures)  
+
+    - GloVe  
+
+    - FastText  
+
+    - Comparison of approaches  
+
+  - Hands-on implementation
+
+-  Document-Level Embeddings (0.5 hour) 
+
+  - Bag of Words (BoW)  
+
+    - Basic concept  
+
+    - Rule-based approach  
+
+    - Order independence  
+
+  - N-gram Models  
+
+    - Extension of BoW  
+
+    - How n affects context capture  
+
+    - Practical considerations  
+
+  - TF-IDF  
+
+    - Theory and implementation  
+
+    - Advantages over BoW  
+
+    - Hands-on practice with each method
+
+- Comparing and Visualization (0.5 hour) 
+
+  - Computing Similarities  
+
+    - Vector normalization  
+
+    - Cosine similarity  
+
+    - When to use each approach  
+
+  - Visualizing Embeddings  
+
+    - Dimensionality reduction techniques  
+
+    - Practical visualization tools  
+
+    - Interpreting embedding spaces  
+
+  - Applications  
+
+    - Retrieval and search
+
+    -   Clustering
+
+    - Data deduplication 
+
+    - Document classification  
+
+    - Recommendation systems
+
+**Lab (1 hour)**
+
+**One hot Encoding**: Implement the basic concept and limitations of
+one-hot encoding while introducing the idea of token-level embeddings.
+
+## Week 3:  From Contextual Embedding to Attention: Sequential Modeling 
+
+- Sequence Processing Networks (1 hour) 
+
+  - Examples of sequence problems (time series, translation, sentiment,
+    speech generation, image captioning,\...)
+
+  - Why sequential data is different 
+
+  - Why word embedding is not enough ( from embedding → **contextual
+    embedding** (one vector) → **attention** that picks the source
+    sentence vectors) → Later it was proved that all we needed was just
+    that attention part (attention is all you need paper)
+
+![](media/image9.png){width="5.853210848643919in"
+height="4.3211001749781275in"}
+
+- RNN Fundamentals  
+
+  - Basic RNN architecture  
+
+  - Processing sequences step by step  
+
+  - RNN Challenges (Vanishing gradients, Long-term dependencies)
+
+  - LSTM/GRU Solutions  
+
+    - Memory cell concept  
+
+    - Gate mechanisms  
+
+- Encoder-Decoder Framework (1 hour) 
+
+  - Types of Sequence Tasks (from diagram)  
+
+    - **NOTE**: Sequential modeling in NLP tasks (use the following
+      picture as inspiration to talk about different seq2seq use cases.
+      No coding, just introduce the concept of the middle and final
+      states and how they lend to different seq2seq NLP
+      tasks): <https://karpathy.github.io/2015/05/21/rnn-effectiveness/>
+
+![](media/image10.png){width="5.853210848643919in"
+height="1.8990824584426946in"}
+
+-  One-to-One  (classification)
+
+-  One-to-Many  (image captioning)→ One input, sequence output
+
+- Many-to-One  (sentiment analysis) → Sequence input, one output
+
+- Many-to-Many  (translation) → Full sequence in and out : Special case
+  of many-to-many that is used in translation. This architecture shows
+  the problems we have in long sentence translation and helps us in
+  introducing the  attention mechanism.  Encoder: First set of RNN units
+  processing input. The final state of the RNN is an encoded version of
+  all inputs (hence Encoder here is the first RNN) Decoder: Second set
+  of RNN units generating output from the state of the Encoder. Encoder
+  processes full input first before decoder comes and use that final
+  state.
+
+- Many-to-Many (Simple case of many-to-many ) → PoS (Part of Speech)
+
+<!-- -->
+
+- Understanding Attention Philosophy (45 mins) 
+
+  - The Attention Intuition  
+
+    - Human attention analogy  
+
+![](media/image11.png){width="5.853210848643919in"
+height="2.0275218722659667in"}
+
+![](media/image12.png){width="5.853210848643919in"
+height="1.6146784776902887in"}
+
+- Review: Why RNN with contextual embedding was not enough
+
+- RNN Attention:
+
+  - Structure:
+
+    - Query (decoder state) looking at Keys (encoder states)  
+
+    - Sequential processing (one token at a time)
+
+    - Attention is between encoder hidden states and current decoder
+      state
+
+    - Only decoder attends to encoder outputs
+
+    - Limitations of this approach
+
+<!-- -->
+
+- Bridge to Modern Architectures (1 hour) 
+
+  - High-Level Introduction to Transformers  
+
+![](media/image13.png){width="5.853210848643919in"
+height="3.623852799650044in"}
+
+- Encoder-decoder architecture at scale  
+
+- Pre- and Post-Training [concepts]{.underline}
+
+## Week 4: From Transformer Block to Transformer Architecture 
+
+- Evolution to Transformer (30 mins)
+
+  - Why we needed something better than RNN+Attention
+
+  - Review: \"Attention is All You Need\" key insight
+
+  - Transformer Architecture Benefits (Parallel processing, longer
+    context, better performance) 
+
+- Transformer Block, A Stack of Technologies  (45 mins) 
+
+![](media/image14.png){width="5.853210848643919in"
+height="3.458715004374453in"}
+
+- Inside Embedding block:
+
+  - Tokenizer, embedding the tokens and positional embedding (Review)
+
+![](media/image15.png){width="5.844036526684165in"
+height="3.4495406824146984in"}
+
+- Inside Transformer block:
+
+![](media/image16.png){width="5.853210848643919in"
+height="2.6055041557305336in"}
+
+- Self-attention
+
+- FFNN
+
+<!-- -->
+
+- Inside Self-attention layer at a glance
+
+  - A simplified view of attention: current position token embedding is
+    processed in relation to other token embeddings in the same
+    sequence, to get an enriched view of the token (contextual embedding
+    of that token)
+
+![](media/image17.png){width="5.853210848643919in"
+height="2.8440365266841643in"}
+
+- Step 1: calculate how much each word in that sentence is relevant to
+  other words in the same sentence (self). The result is called
+  attention score or relevance score. 
+
+- Step 2: multiple each attention score in the meanings of each word in
+  that sentence
+
+- Step 3: Average sum to get the attention value of that word/token) in
+  that sentence 
+
+![](media/image18.png){width="3.9318143044619425in"
+height="4.87471019247594in"}
+
+- Visualizing QKV projection
+
+![](media/image19.png){width="5.853210848643919in"
+height="3.7706419510061244in"}
+
+- Attention Head 
+
+  - Each self attention is deemed as one head
+
+![](media/image20.png){width="5.853210848643919in"
+height="4.688073053368329in"}
+
+- Multi Head Attention (MHA)
+
+  - Transformers are able to look into each token from different
+    perspstives and each needs its own head. They have multiple heads.
+
+![](media/image21.png){width="5.356278433945757in"
+height="4.869343832020998in"}
+
+- Inside FFNN Block
+
+  - The output of self attention layer undergoes non-linear
+    transformations, which gives the model additional degree of freedom
+    to find complex patterns 
+
+  - Bringing the attention weights to the next level
+
+  - Expanding the dimension to original token embedding dimension 
+
+![](media/image22.png){width="5.853210848643919in"
+height="4.79816491688539in"}
+
+- Residual connections 
+
+  - What problem they solve 
+
+- Decoder 
+
+  - Difference with Encoder : Casual Attention 
+
+- Encoder-decoder architecture overview
+
+  - Cross-attention
+
+- Visualizing information flows (not mathematical details)
+
+  - From Encoder to Decoder for a Translation scenario
+
+a.  Modern Language Models Architecture (45 mins)
+
+    - Transformer Architecture 
+
+    - Architectural Variations
+
+      - Encoder-only models
+
+      - Decoder-only models 
+
+      - Encode-Decoder models
+
+    - Pre-training and fine-tuning concept
+
+    - When to use each type
+
+      - Sentiment Analysis
+
+      - Semantic Search 
+
+      - Chatbot 
+
+      - Describing what is in the picture 
+
+      - \...(add more examples here)
+
+**Lab (2 hours)**
+
+a.  \...\...
+
+## Week 5: Working with Pre-trained Models 
+
+**Lecture (2 hours)**
+
+- (Review) Model hubs
+
+- Model cards
+
+  - SageMaker JumptStart
+
+  - HuggingFace
+
+- LLM Lifecycle
+
+![](media/image23.png){width="5.853210848643919in"
+height="1.715596019247594in"}
+
+- **Pre-training **
+
+  - Common data sets
+
+  - Default Training objectives
+
+![](media/image24.png){width="5.853210848643919in"
+height="3.5963298337707785in"}
+
+- MLM (→ BERT)
+
+- NSP (→ BERT)
+
+- Causal Language Modeling (CLM)  (→ GPT)
+
+- What if none of the above objectives fits the current use case?
+
+  - Partial Fine tuning (Transfer Learning)
+
+  - Full Fine tuning
+
+  - Building model from scratch 
+
+<!-- -->
+
+- **Post Training:** Instruction Fine Tuning 
+
+  - High quality data: pairs of (Prompt, Response)
+
+  - Fine tuning entire model
+
+  - Transfer Learning (Partial training)
+
+- **Post Training:** Preference Tuning (Post Training) 
+
+  - Why do we need Preference Tuning 
+
+  - RLHF
+
+  - DPO (Direct Preference Optimization) 
+
+<!-- -->
+
+- Transformer Architecture variations
+
+![](media/image25.png){width="5.853210848643919in"
+height="3.5321095800524933in"}
+
+- Encoder variations (Autoencoding LMs)
+
+  - Understanding Language task 
+
+  - BERT
+
+  - RoBERTa
+
+  - DistilBERT
+
+- Decoder variations (Autoregressive LMs)
+
+  - Generating task 
+
+  - GPT
+
+  - LLaMA
+
+- Encoder-Decoder (Combination)
+
+  - T5
+
+  - BART
+
+  - ByT5
+
+<!-- -->
+
+- Scaling Laws
+
+  - Estimating Memory Requirement of a model
+
+    - Using back of napkin method
+
+  - Power Low
+
+  - Chinchilla
+
+![](media/image26.png){width="5.853210848643919in"
+height="3.2752285651793525in"}
+
+- Bigger models \# Better Performance 
+
+<!-- -->
+
+- Hyper-parameters of Transformers
+
+  - Vocabulary size
+
+  - Input size 
+
+  - Token embedding dimension
+
+  - FF network embedding size
+
+  - Attention Layer embedding 
+
+  - Number of attention heads
+
+  - Number of stacked layers
+
+- Profiling pre-trained models (like GPT2, Qwen, Small LM)- Model
+  Selection
+
+  - Understanding model capabilities and limitations
+
+  - Model selection criteria 
+
+    - Workflow 
+
+![](media/image27.png){width="5.853210848643919in"
+height="2.733944663167104in"}
+
+![](media/image28.png){width="5.853210848643919in"
+height="1.990825678040245in"}
+
+-  Hosting Model API
+
+![](media/image29.png){width="5.853210848643919in"
+height="3.394494750656168in"}
+
+- Why hosting Model API 
+
+- Model capability vs evaluation 
+
+- Taxonomy of Evaluation metrics
+
+![](media/image30.png){width="5.853210848643919in"
+height="2.8165135608048995in"}
+
+-  Understanding Public Benchmarks
+
+-  Introduction to eleuther.ai
+
+-  Introduction to Public Leaderboards 
+
+- Introduction to HuggingFace Leaderboard 
+
+![](media/image31.png){width="2.725in" height="1.8in"}
+
+-  Designing an Evaluation Pipeline
+
+- 
+
+**Lab (2 hours)**
+
+- \.....
+
+- 
+
+## Week 6:  Text Classification with Fined-Tuned Encoder Models
+
+![](media/image32.png){width="5.853210848643919in"
+height="5.348623140857393in"}
+
+**Fine-Tuned Encoder Models (Task Specific Models) (\... hour)**
+
+- Text classification fundamentals
+
+- Loading data
+
+- Model Leaderboard:
+
+  - [Open LLM
+    Leaderboard](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard#/)
+
+  - Massive Text Embedding Benchmark (MTEB)
+
+![](media/image33.png){width="5.853210848643919in"
+height="2.990825678040245in"}
+
+- <https://artificialanalysis.ai/>
+
+- BERT variations and comparing performance benchmarks
+
+![](media/image34.png){width="5.853210848643919in"
+height="1.7431189851268591in"}
+
+**Lab (\... hours)**
+
+..
+
+- 
+
+## Week 7:  Expanding Pre-trained Embedding Model 
+
+![](media/image35.png){width="5.853210848643919in"
+height="3.376146106736658in"}
+
+**Lecture (2 hours)**
+
+- Sentiment Analysis by adding a Classifier head to an Embedding Model
+  with labeled data
+
+  - Data Preparation
+
+  - Generating Sentence Embeddings 
+
+  - Training a Classifier with embedded sentences 
+
+![](media/image36.png){width="5.853210848643919in"
+height="2.7981649168853893in"}
+
+- Sentiment Analysis using Embedding Model with unlabeled data
+
+  - Using Zero-Shot classification technique 
+
+  - Using Cosine Similarity to find sentiment
+
+**Lab (2 hours)**
+
+- \...
+
+- Implementing efficient retrieval
+
+- Developing ranking systems
+
+- Search quality assessment
+
+- System optimization techniques
+
+## Week 8: Application of Embedding Models in Information Retrieval  (IR)
+
+**Lecture (2 hours)**
+
+- IR in RAG
+
+![](media/image37.png){width="3.2110597112860892in"
+height="1.7014774715660543in"}
+
+- Comparing lexical search vs. Semantic Search (Keyword matching  vs.
+  Dense Retrieval) 
+
+- Vector and Vector Data Store
+
+  - Application of KNN in IR
+
+  - KNN libraries
+
+  - Indexing and Vector Databases 
+
+- Building an Semantic Search pipeline through Embedding models
+
+![](media/image38.png){width="5.853210848643919in"
+height="2.137613735783027in"}
+
+- Text pre-processing 
+
+- Selecting and applying a chunking strategy
+
+- Sentence Embedding 
+
+- Index Building
+
+- Running Similarity Search 
+
+<!-- -->
+
+- 
+
+- Fine tuning embedding model for Semantic search 
+
+  - Fine tuning chunk embeddings 
+
+![](media/image39.png){width="5.853210848643919in"
+height="2.697247375328084in"}
+
+**Lab (2 hours)**
+
+- \...\...
+
+- Implementing efficient retrieval
+
+- Developing ranking systems
+
+- Search quality assessment
+
+- System optimization techniques
+
+## Week 9: Re-ranking in RAG systems
+
+![](media/image40.png){width="5.853210848643919in"
+height="2.577981189851269in"}
+
+**Lecture (2 hours)**
+
+- Limitations of pure vector search in RAG systems
+
+- Why ranking matters in retrieval
+
+- Two-stage retrieval architecture
+
+- Understanding re-ranking models (like BGE-reranker-large)
+
+- RAGAS evaluation metrics
+
+  - Answer Relevancy
+
+  - Answer Similarity
+
+  - Context Relevancy
+
+  - Answer Correctness
+
+**Lab (1.5hours)**
+
+**\...**
+
+## Week 10: Using Generative Models for Sentiment Analysis 
+
+**Lecture (2 hours)**
+
+- Challenge of using Generative models for task specific use cases
+
+- Understanding the significance of Context and Prompt
+
+- Using T5 models for Classification 
+
+  - T5 Architecture 
+
+  - Token spans
+
+  - Flan-T5 model family 
+
+    - Multi-task instruction dataset finetuning 
+
+    - How to minimize the effect of "Catastrophic Forgetting"
+
+![](media/image41.png){width="5.853210848643919in"
+height="2.724770341207349in"}
+
+- Loading model 
+
+- preparing data (text and label) → Converting a dataset to instruction
+  dataset
+
+- Using instruction dataset to generate the required output
+
+- Evaluating model
+
+- 
+
+**Lab (2 hours)**
+
+- in addition to the comment I provided, implementing the following
+  environment seems a good candidate as it has *Sentiment Analysis*:
+
+### Analyze customer reviews using Amazon Bedrock
+
+<https://aws.amazon.com/blogs/machine-learning/analyze-customer-reviews-using-amazon-bedrock/>
+
+![](media/image42.png){width="5.853210848643919in"
+height="3.100916447944007in"}
+
+- Lab:
+
+## Week 11: Controlling and enhancing the generation process
+
+- Why controlling the output is important
+
+  - Inconsistency 
+
+  - Hallucination 
+
+  - Formatted output 
+
+- Controlling the outputs of Generative Models
+
+  - Token Generation methods
+
+    - Deterministic methods
+
+      - Greedy Search
+
+      - Beam Search
+
+    - Probabilistic methods (Sampling Strategies)
+
+      -  Sampling-based generation
+
+      - Temperature sampling
+
+      - Top p nucleus sampling
+
+      - Top K
+
+  - Experimentation with Modular prompt 
+
+    - Instruction
+
+    - Data
+
+    - Output indicators
+
+    - \...\...\...( add more modular components of complex prompt )
+
+  - Understanding underlying prompt specific model
+
+  - Prompt Chaining
+
+    - Complex multi step task 
+
+![](media/image43.png){width="3.885439632545932in"
+height="5.164347112860892in"}
+
+- Reasoning by CoT
+
+  - Reasoning: Self Reflection
+
+  - Variations
+
+    - CoT with one shot
+
+    - CoT with zero shot
+
+- Self Consistency and CoT
+
+  - Using Same prompt with different LLMs
+
+![](media/image44.png){width="3.824779090113736in"
+height="5.161653543307087in"}
+
+- Controlling outputs
+
+  - Different types of output verifications
+
+  - Example: LMQL
+
+<!-- -->
+
+- Fine Tuning Generating models
+
+![](media/image45.png){width="5.853210848643919in"
+height="1.9541283902012248in"}
+
+- 
+
+- Fine tuning pipeline 
+
+  - Pertaining a Language Model
+
+  - Supervised fine-tuning (SFT)
+
+    - Full fine tuning 
+
+    - Benefits and disadvantages of full fine tuning 
+
+    - Parameter Efficient Fine Tuning (PEFT)
+
+  - Preference tuning (Aligning/RLHF)
+
+<!-- -->
+
+- Selecting evaluation metrics
+
+  -  BLEU
+
+  - ROUGE
+
+- Public Benchmarks
+
+  - GLEU
+
+  - MMLU
+
+  - TruhfulQA
+
+  - GSM8k
+
+**Lab **
+course.md…]()
+
 # Diagrams 
 
 
